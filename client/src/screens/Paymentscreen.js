@@ -48,7 +48,7 @@ function Paymentscreen({ history }) {
                         <p>Select Buy Goods and Services</p>
                         <p>Enter the till Number 9260763</p>
                         <p>Enter the Amount {subtotal}</p>
-                        <p>Upon completion of payment tick the Plug Pay option to continue</p>
+                        <p>Upon completion of payment tick the Plug Pay option then press continue</p>
                         <Form.Check
                             type='radio'
                             label='Plug Pay (tick this box after paying then press continue)'
@@ -57,16 +57,18 @@ function Paymentscreen({ history }) {
                             onChange={(e) => savePaymentMethod(e.target.value)}
 
 
-                        >
+                        ></Form.Check>
 
-                        </Form.Check>
+
+                        <b>Remember to tick the plug pay option after paying before pressing continue</b>
+
+                        <Button type='submit' variant='primary'>
+                            Continue
+                        </Button>
                     </Col>
-                </Form.Group>    
+                </Form.Group>
             </Form>
-            <br>-------------------------------------------------------------------------------------</br>
-            <Button type='submit' variant='primary'>
-                    Continue
-                </Button>
+
         </FormContainer>
     )
 }
