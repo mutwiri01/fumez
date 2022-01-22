@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getOrdersByUserId, deliverOrder} from "../actions/orderActions";
+import { getOrdersByUserId} from "../actions/orderActions";
 import Loader from "../components/Loader";
 import Error from '../components/Error'
 import { Link } from "react-router-dom";
@@ -10,8 +10,6 @@ export default function Ordersscreen() {
 
   const {orders , error , loading} = orderstate
   
-  const orderDeliver = useSelector(state => state.orderDeliver)
-  const { loading: loadingDeliver, success: successDeliver } = orderDeliver
 
 
   const dispatch = useDispatch();
@@ -19,7 +17,7 @@ export default function Ordersscreen() {
     if (localStorage.getItem("currentUser")) {
       dispatch(getOrdersByUserId());
     } else {
-      window.location.href = "/login";
+      window.location.href = "/";
     }
   }, [dispatch]);
 

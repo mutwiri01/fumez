@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import CheckoutSteps from '../components/Checkoutsteps'
 import { createOrder } from '../actions/orderActions'
+
+
 function Placeorderscreen({ history }) {
     const orderCreate = useSelector(state => state.orderCreateReducer)
     const { order, error, success } = orderCreate
@@ -34,7 +36,7 @@ function Placeorderscreen({ history }) {
         dispatch(createOrder(subtotal))
         if (success) {
             history.push(`/orders/:order._id`)
-
+            dispatch({ type: 'ORDER_CREATE_RESET' })
         }
     }
 

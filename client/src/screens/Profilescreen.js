@@ -59,6 +59,59 @@ function Profilescreen() {
 
 
         <Row>
+
+            <Col md={9}>
+                <h2>My Orders</h2>
+                {loading ? (
+                    <Loader />
+                ) : error ? (
+                    <Message variant='danger'>{error}</Message>
+                ) : (
+                    <Table striped responsive className='table-sm'>
+                        <thead>
+                            <tr>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Payment Status</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {loading && (<Loader/>)}
+                  {orders && (orders.map(order=>{
+                    return <tr onClick={()=>{window.location=`/orderinfo/${order._id}`}}>
+                      <td>{order.orderAmount}</td>
+                      <td>{order.createdAt.substring(0,10)}</td>
+                      <td>{order.isPaid ? (<li>Payment Processing</li>) : (<li>Payment Completed</li>)}</td>
+                      <td>{order.isDelivered ? (<li>Delivered</li>) : (<li>Order Placed</li>)}</td>
+
+                      <td> <LinkContainer to={`/orderinfo/${order._id}`}>
+                                                    <Button className='btn-sm'>Details</Button>
+                                                </LinkContainer></td>
+                      </tr>
+                      
+                     
+                   
+                  }))}
+
+                        </tbody>
+                    </Table>
+                )}
+
+            </Col>
+        </Row>
+
+
+
+
+
+    )
+}
+
+export default Profilescreen
+
+/**
             <Col md={3}>
                 <h2>User Profile</h2>
 
@@ -127,58 +180,7 @@ function Profilescreen() {
                         Update
                     </Button>
                 </Form>
-            </Col>
-
-            <Col md={9}>
-                <h2>My Orders</h2>
-                {loading ? (
-                    <Loader />
-                ) : error ? (
-                    <Message variant='danger'>{error}</Message>
-                ) : (
-                    <Table striped responsive className='table-sm'>
-                        <thead>
-                            <tr>
-                                <th>Amount</th>
-                                <th>Date</th>
-                                <th>Payment Status</th>
-                                <th>Status</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        {loading && (<Loader/>)}
-                  {orders && (orders.map(order=>{
-                    return <tr onClick={()=>{window.location=`/orderinfo/${order._id}`}}>
-                      <td>{order.orderAmount}</td>
-                      <td>{order.createdAt.substring(0,10)}</td>
-                      <td>{order.isPaid ? (<li>Payment Processing</li>) : (<li>Payment Completed</li>)}</td>
-                      <td>{order.isDelivered ? (<li>Delivered</li>) : (<li>Order Placed</li>)}</td>
-
-                      <td> <LinkContainer to={`/orderinfo/${order._id}`}>
-                                                    <Button className='btn-sm'>Details</Button>
-                                                </LinkContainer></td>
-                      </tr>
-                      
-                     
-                   
-                  }))}
-
-                        </tbody>
-                    </Table>
-                )}
-
-            </Col>
-        </Row>
-
-
-
-
-
-    )
-}
-
-export default Profilescreen
+            </Col> */
 
 /** 
  * 

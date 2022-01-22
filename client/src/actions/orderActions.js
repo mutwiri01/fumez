@@ -56,6 +56,14 @@ export const createOrder = (subtotal) => async (dispatch, getState) => {
             payload: data
         })
 
+
+        dispatch({
+            type: 'CART_CLEAR_ITEMS',
+            payload: data
+        })
+
+        localStorage.removeItem('cartItems')
+
     } catch (error) {
         dispatch({
             type: 'ORDER_CREATE_FAIL',
@@ -68,7 +76,7 @@ export const createOrder = (subtotal) => async (dispatch, getState) => {
 
 export const deliverOrder = () => async (dispatch, getState) => {
 
-    
+
 
     try {
         dispatch({
