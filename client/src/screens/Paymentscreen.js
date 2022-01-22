@@ -51,7 +51,7 @@ function Paymentscreen({ history }) {
                         <p>Upon completion of payment tick the Plug Pay option to continue</p>
                         <Form.Check
                             type='radio'
-                            label='Plug Pay'
+                            label='Plug Pay (tick this box after paying then press continue)'
                             name='paymentMethod'
 
                             onChange={(e) => savePaymentMethod(e.target.value)}
@@ -61,14 +61,12 @@ function Paymentscreen({ history }) {
 
                         </Form.Check>
                     </Col>
-                </Form.Group>
-
-                <Button type='submit' variant='primary'>
+                </Form.Group>    
+            </Form>
+            <br>-------------------------------------------------------------------------------------</br>
+            <Button type='submit' variant='primary'>
                     Continue
                 </Button>
-                
-                
-            </Form>
         </FormContainer>
     )
 }
