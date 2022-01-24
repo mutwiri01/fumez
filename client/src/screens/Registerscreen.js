@@ -107,14 +107,14 @@ function Registerscreen() {
                     >
                     </Form.Control>
                 </Form.Group>
-
+            
+            
                 <Button type='submit' variant='primary'>
                     Register
                 </Button>
 
             </Form>
-            <hr />
-            <Link to='/'> <b>Click here to Login</b> </Link>
+            
 
         </Formcontainer>
 

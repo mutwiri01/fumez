@@ -24,7 +24,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={Loginscreen} />
-        <Route path='/ofb' component={Registerscreen} />
+        <Route path='/plyt' component={Registerscreen} />
 
         <main className="py-3">
           <Header />
