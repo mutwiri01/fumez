@@ -62,6 +62,7 @@ function Profilescreen() {
 
             <Col md={9}>
                 <h2>My Orders</h2>
+                <h1><b> If you have issues with any order please call +254780671512 for assistance </b></h1>
                 {loading ? (
                     <Loader />
                 ) : error ? (

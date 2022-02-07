@@ -46,6 +46,7 @@ export default function Orderinfo({ match }) {
                       {item.price * item.quantity}
                     </h1>
                     <hr />
+                    <h1><b> If not contacted within 10 minutes call the following number +254780671512  </b></h1>
                   </div>
                 );
               })}
@@ -84,6 +85,8 @@ export default function Orderinfo({ match }) {
                   Phonenumber : <b>{order.shippingAddress.country}</b>
                 </h1>
               </div>
+
+              
             </div>
           </div>
         </div>

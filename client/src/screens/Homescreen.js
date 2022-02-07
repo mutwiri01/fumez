@@ -2,9 +2,10 @@ import React from 'react'
 import axios from 'axios'
 import Product from '../components/Product'
 import { useEffect, useState } from 'react'
+import { LinkContainer, Button } from 'react-router-bootstrap'
 import Loader from "../components/Loader";
 import Error from "../components/Error";
-
+import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllProducts } from '../actions/productActions'
 
@@ -31,20 +32,22 @@ function Homescreen() {
 
     return (
 
-        
+
 
         <div>
             <div className="row justify-content-center">
-            
+                <Link to='/profile'><h1><b>MY ORDERS</b></h1></Link>
+                
 
                 {loading ? (
-                    <Loader/>
+                    <Loader />
                 ) : error ? (
-                    <Error error='System is down. Please be patient while it is being fixed'/>
+                    <Error error='System is down. Please be patient while it is being fixed' />
                 ) : (
-                    products.map(product =>{
-                        return <div className="col-md-3 my-3 p-3 rounded"> 
-                            <Product product={product}/>
+                    
+                    products.map(product => {
+                        return <div className="col-md-3 my-3 p-3 rounded">
+                            <Product product={product} />
                         </div>
                     })
                 )
@@ -57,3 +60,7 @@ function Homescreen() {
 }
 
 export default Homescreen
+
+/** <LinkContainer to='/profile'>
+                
+                  </LinkContainer> */
