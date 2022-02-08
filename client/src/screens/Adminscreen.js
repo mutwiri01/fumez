@@ -39,22 +39,22 @@ function Adminscreen() {
                 <div className="col-md-10">
                     <h2>Admin Panel</h2>
                     <ul className='admin p-2'>
-                        <li><Link to='/admin/userslist'>UsersList</Link></li>
-                        <li><Link to='/admin/productslist' >Products List</Link></li>
-                        <li><Link to='/admin/addnewproduct'>Add New Product</Link></li>
-                        <li><Link to='/admin/orderslist'>Orderslist</Link></li>
+                        <li><Link to='/mg_kitush/userslist'>UsersList</Link></li>
+                        <li><Link to='/mg_kitush/productslist' >Products List</Link></li>
+                        <li><Link to='/mg_kitush/addnewproduct'>Add New Product</Link></li>
+                        <li><Link to='/mg_kitush/orderslist'>Orderslist</Link></li>
                     </ul>
 
 
                     <Switch>
                         <Route path='/mg_kitush/' component={Userslist} exact />
-                        <Route path='/admin/userslist' component={Userslist} />
-                        <Route path='/admin/orderslist' component={Orderslist} />
-                        <Route path='/admin/addnewproduct' component={Addproduct} />
-                        <Route path='/admin/productslist' component={Productslist} />
-                        <Route path='/admin/editproduct/:productid' component={Editproduct} />
+                        <Route path='/mg_kitush/userslist' component={Userslist} />
+                        <Route path='/mg_kitush/orderslist' component={Orderslist} />
+                        <Route path='/mg_kitush/addnewproduct' component={Addproduct} />
+                        <Route path='/mg_kitush/productslist' component={Productslist} />
+                        <Route path='/mg_kitush/editproduct/:productid' component={Editproduct} />
 
-        
+
                     </Switch>
 
                 </div>
