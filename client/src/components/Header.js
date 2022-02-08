@@ -64,7 +64,7 @@ export default function Header() {
 
               {currentUser && currentUser.isAdmin ? (
                 <NavDropdown title={currentUser.name} id='currentUser.isAdmin '>
-                  <LinkContainer to='/admin'>
+                  <LinkContainer to='/mg_kitush'>
                     <NavDropdown.Item>Admin</NavDropdown.Item>
                   </LinkContainer>
 

@@ -41,7 +41,7 @@ function App() {
 
             <Route path='/orderinfo/:orderid' component={Orderinfo} />
 
-            <Route path='/admin'component={Adminscreen}  />
+            <Route path='/mg_kitush'component={Adminscreen}  />
 
 
           </Container>

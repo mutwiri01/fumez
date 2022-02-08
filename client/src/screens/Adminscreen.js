@@ -47,14 +47,14 @@ function Adminscreen() {
 
 
                     <Switch>
-                        <Route path='/admin/' component={Userslist} exact />
+                        <Route path='/mg_kitush/' component={Userslist} exact />
                         <Route path='/admin/userslist' component={Userslist} />
                         <Route path='/admin/orderslist' component={Orderslist} />
                         <Route path='/admin/addnewproduct' component={Addproduct} />
                         <Route path='/admin/productslist' component={Productslist} />
                         <Route path='/admin/editproduct/:productid' component={Editproduct} />
 
-
+        
                     </Switch>
 
                 </div>
